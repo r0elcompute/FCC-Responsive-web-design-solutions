@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #e9edc9;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.5rem 0.25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    border: 1px solid #000;
+    background-color: #f4d58d;
+    overflow-y: scroll;
+}
+
+#navbar header {
+    font-size: 1.5rem;
+    margin: auto auto;
+    padding: 20px;
+    color: #bf0603;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.nav-link {
+    margin: 1rem auto;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: #777;
+}
+
+.bottom-line {
+    width: 100%;
+    height: 2px;
+    color: #333;
+}
+
+#main-doc {
+    margin: 2% 5% 5% 22%;
+    padding: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#dark-light button{
+    background-color: #000;
+    color: #fff;
+    border: 2px dotted #000;
+    width: 100%;
+    height: 2rem;
+    text-transform: uppercase;
+    
+}
+#main-doc header {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0.5rem 1rem;
+    font-family: Quicksand, sans-serif;
+}
+
+#main-doc pre {
+    margin: 1rem auto;
+}
+
+#main-doc code {
+    font-size: 1rem;
+}
+
+#main-doc a {
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #00509d;
+}
+
+.key-word {
+    color: #6f1d1b;
+    font-family: Archivo, sans-serif;
+}
+
+@media (min-width: 300px) and (max-width: 720px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    #navbar {
+        width: 100%;
+        height: 7rem;
+        overflow-y: auto;
+        margin: 0 auto;
+        position: static;
+    }
+
+    #navbar header {
+        font-size: 0.7rem;
+    }
+
+    #navbar a {
+        font-size: 0.5rem;
+    }
+
+    #main-doc {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    #main-doc header {
+        font-size: 80%;
+    }
+    p {
+        font-size: 75%;
+    }
+
+    pre {
+        margin-left: 0;
+        overflow-x: auto;
+    }
+
+    a {
+        font-size: 20%;
+    }
+    code {
+        font-size: 15%;
+    }
+}

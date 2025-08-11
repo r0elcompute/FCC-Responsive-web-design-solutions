@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">ROELCOMPUTE SURVEY FORM</h1>
+    <p id="description">Please fill out the following form, it is for keeping track of our service delivery!</p>
+    <form id="survey-form">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label id="name-label" for="name">Enter your Name: <input type="text" id="name" placeholder="John Doe" required></label>
+        <label id="email-label" for="email">Enter your Email: <input type="email" id="email" placeholder="Johndoe@fake.com" required></label>
+        <label id="number-label" for="number">Enter your Age (Optional): <input type="number" id="number" placeholder="20" min="10" max="120" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Where did you hear about us?</legend>
+        <select id="dropdown">
+          <option>(Click to see more)</option>
+          <option>Social media platforms(facebook, instagram etc)</option>
+          <option>Friends</option>
+          <option>Our social media promotions</option>
+          <option>Radio</option>
+          <option>Other</option>
+        </select>
+        <label for="other">
+          If other, please specify:
+          <textarea id="other" rows="10" cols="30"></textarea>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Would you recommend us to a friend?</legend>
+        <label for="yes">
+          <input name="recommend" id="yes" type="radio" value="Yes" checked> Yes
+        </label>
+        <label for="no">
+          <input name="recommend" id="no" type="radio" value="No" > No
+        </label>
+        <label for="improve">
+          If No, what are some of the areas you would wan't us to improve?
+          <textarea id="improve" rows="10" cols="30"></textarea>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>On a scale of 1-10, where would you rate us?(Be sure to select only one value please)</legend>
+        <label for="zero">
+          <input type="checkbox" value="One" name="rate"> One(1)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Two" name="rate"> Two(2)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Three" name="rate"> Three(3)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Four" name="rate"> Four(4)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Five" name="rate"> Five(5)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Six" name="rate"> Six(6)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Seven" name="rate"> Seven(7)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Eight" name="rate"> Eight(8)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Nine" name="rate"> Nine(9)
+        </label>
+        <label for="zero">
+          <input type="checkbox" value="Ten" name="rate" checked> Ten(10)
+        </label>
+      </fieldset>
+      <label for="terms">
+        <input id="terms" type="checkbox" value="terms-and-conditions"> I accept the <a href="">terms and conditions</a>
+      </label>
+      <input id="submit" type="submit" value="Submit">
+    </form>
+  </body>
+</html>

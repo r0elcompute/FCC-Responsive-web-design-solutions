@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Git Documentation</title>
+    </head>
+    <body>
+        <!--On smaller screens, navbar should be to the left and visible to user-->
+        <nav id="navbar">
+            <header>Git Documentation</header>
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#installing-git" class="nav-link">Installing Git</a>
+            <a href="#configuring-git" class="nav-link">Configuring Git</a>
+            <a href="#git-basics" class="nav-link">Git Basics: init, add, commit</a>
+            <a href="#git-status" class="nav-link">Git status and Log</a>
+            <a href="#branching" class="nav-link">Branching</a>
+            <a href="#merging" class="nav-link">Merging</a>
+            <a href="#cloning-pulling" class="nav-link">Cloning & Pulling</a>
+            <a href="#push-pull-workflow" class="nav-link">Push & Pull Workflow</a>
+            <a href="#github-basics" class="nav-link">Github basics</a>
+            <a href="#troubleshooting-tips" class="nav-link">Troubleshooting Tips</a>
+            <a href="#reference" class="nav-link">Reference</a>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="introduction">
+            <div id="dark-light">
+                <button>change dark/light mode</button>
+            </div>
+                <header>Introduction</header>
+                <p>
+                    Git is a popular version control system which was invented by Linus Torvalds in the year 2005.
+                    Before git was invented, people, specifically developers faced huge challenges in keeping track of the changes they made to their source codes.
+                    So what exactly does git do?, git is like a tracking device implanted into our computers, it can be used to keep track of almost anything we want it to (mostly files like images or text documents).
+                </p>
+                <p>
+                    Git made it easier for developers and programmers to be able to debug source code, as when a certain feature in an app breaks, the developers can be able to see what it is they most recently added to their source code and immediately roll back
+                    to the previous working version of their program.
+                </p>
+            </section>
+            <section class="main-section" id="installing-git">
+                <header>Installing Git</header>
+                <p>To install git, if using the terminal, type the following commands:</p>
+                    <br>
+                    <p>For Linux, type:
+                    Keep in mind that this is for ubuntu and debian based systems. </p>
+                    <pre>
+                        <code>
+                            sudo apt install git
+                        </code>
+                    </pre>
+                    <p>If on the other hand, you are using Linux but specifically arch based, type the following command in your terminal:</p>
+                    <pre>
+                        <code>
+                            sudo pacman install git
+                        </code>
+                    </pre>
+                    <p>Alternatively, if you want a less tedious and more graphical way of handling the installation, you can visit:</p>
+                    <pre>
+                        <a href="https://git-scm.com" target="_blank">git download link</a>
+                    </pre>        
+
+                    <p>After installing git using the CLI aka Command Line Interface, head over to your terminal and type the commmand:</p>
+                    <pre>
+                        <code>
+                            git --version
+                        </code>
+                    </pre>
+                    <p>Once the command runs successfully, you will be able to see the output specifying the git and version number.</p>
+                    <br>
+                    <p>However if installed via a web browser, you may need to manually open the folder where the git was downloaded and manually install it.</p>
+            </section>
+            <section class="main-section" id="configuring-git">
+                <header>Configuring Git</header>
+                <p>
+                    Git needs to be configured and configuring requires that you have done some background activity before that because when we speak of configuring git, we mean providing github(a popular online hosting platform for repositories) details to your git tracker in your machine.
+                </p>
+                    <p>After successfuly doing the above steps, head on over back to your terminal and type the following, in order to provide github details to your git tracker, if not yet signed or opened an account with github, use the following link to do so:</p>
+                    <pre>
+                        <a href="https://github.com">Open an account with github</a>
+                    </pre>
+                    <p>After successfuly opening up an account and signing with your details such as email/username and password, type the following command in your terminal:</p>
+                    <pre>
+                        <code>
+                            git config --global user.name "your username"
+                        </code>
+                    </pre>
+                    <p>Then type:</p>
+                    <pre>
+                        <code>
+                            git config --global user.email "your email"
+                        </code>
+                    </pre>
+                    <p>You will then need to <span class="key-words">verify details</span> and to do so, while in the terminal, type:</p>
+                    <pre>
+                        <code>
+                            git config --global user.name
+                        </code>
+                    </pre>
+
+                    <p>If successfull, will display the appropriately set username</p>
+
+                    <pre>
+                        <code>
+                            git config --global user.email
+                        </code>
+                    </pre>
+
+                    <p>If successfull, will display the appropriately set email address</p>
+                    <p>The next step will be to <span class="key-word">Generate an SSH Key</span>, in your terminal type:</p>
+                    <pre>
+                        <code>
+                            ssh-keygen -t rsa -C "email@email.com"
+                        </code>
+                    </pre>
+
+                    <p>An SSH key will be generated, <span class="key-word">copy</span> it using the GUI if you may.</p>
+                    <p>The next step will be to <span class="key-words">add the SSH key to your github account</span>Open up github and navigate to the SSH and GPG keys <br>
+                    Here is a video showcasing the appropriate steps to take to accomplish that:</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iVJesFfzDGs?si=ODD2cE3OxekWb9J8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>The last and final step in configuring git is <span class="key-word">testing its connection with github</span></p>
+                    <pre>
+                        <code>
+                            ssh -T git@github.com
+                        </code>
+                    </pre>
+
+                    <p>If it is successful, you will see a positive output, if not you may need to closely revisit the above steps to make sure you did not skip any.</p>
+            </section>
+            <section class="main-section" id="git-basics">
+                <header>Git Basics: init, add, commit</header>
+                <p>Git basics including initializing a repository to be tracked by git, afterwards, when development and version tracking begins, tracking using the add command and finally commiting the changes using the commit command.</p>
+                <p>To initialize an empty git repository, type the following command:</p>
+                <pre>
+                    <code>
+                        git init "repo-name"
+                    </code>
+                </pre>
+                <p>The above command initializes an empty git repo in the current working directory of your computer.</p>
+                <p>When you begin development, you will need to stage changes to your source code. To stage changes, use the following command:</p>
+                <pre>
+                    <code>
+                        git add "filename"
+                    </code>
+                </pre>
+
+                <p>Luckily, if you want to stage all the files in the git repo, you can, using the following command:</p>
+                <pre>
+                    <code>
+                        git add .
+                    </code>
+                </pre>
+
+                <p>The period(.) stands for current working directory in linux file systems.</p>
+                <p>Finally for this section, to now commit changes, which is to put the changes on the final step awaiting the pushing of changes, use the following command.</p>
+                <pre>
+                    <code>
+                        git commit -m "commit message"
+                    </code>
+                </pre>
+                <p>The commit message is a short explanation of the changes you made to your source code.</p>
+                <p>Feel free to read this freeCodeCamp article on<a href="https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/">How to Write Better Commit Messages</a></p>
+            </section>
+            <section class="main-section" id="git-status">
+                <header>Git Status and Log</header>
+                <p>Git status and log are powerful git tools that are used when we want to check whether we might have skipped a useful step or rather debug issues and problems encountered with version control</p>
+                <p>Git status will give an update on the current tracking situation. <br>
+                If 2 files have been staged it will give that update, if some havent been staged, it will give that update. <br>
+            If some files are awaiting to be pushed to the remote github repo, it will provide feedback and also if there is nothing to track, it will also inform us. Pretty cool right?</p>
+                <p>To be able to use git status command in your working directory, simply type:</p>
+                <pre>
+                    <code>
+                        git status
+                    </code>
+                </pre>
+                <p>As easy as that, the status of your git repo will be displayed.</p>
+                <p>Git log shows the commit history of a repository. It helps trace changes, see who made them and why.</p>
+                <pre>
+                    <code>
+                        git log
+                    </code>
+                </pre>
+
+                <p>One-line summary per commit:</p>
+                <pre>
+                    <code>
+                        git log --oneline
+                    </code>
+                </pre>
+                <p>Limit number of commits shown:</p>
+                <pre>
+                    <code>
+                        git log -n 5
+                    </code>
+                </pre>
+                <p>View commits of a specific author:</p>
+                <pre>
+                    <code>
+                        git log --author="Your Name"
+                    </code>
+                </pre>
+                <p>View changes with each commit:</p>
+                <pre>
+                    <code>
+                        git log -p
+                    </code>
+                </pre>
+                <p>These variations make git log a powerful tool for understanding how your codebase has evolved.</p>
+                </section>
+                <section class="main-section" id="branching">
+                <header>Branching</header>
+                <p>Branching in Git allows you to diverge from the main line of development and work on features or fixes independently. It helps you isolate changes before merging them into the main project.</p>
+                <p>Create a new branch:</p>
+                <pre>
+                    <code>
+                        git branch feature-name
+                    </code>
+                </pre>
+                <p>Switch to a new branch:</p>
+                <pre>
+                    <code>
+                        git checkout feature-name
+                    </code>
+                </pre>
+                <p>Create and switch in one command:</p>
+                <pre>
+                    <code>
+                        git checkout -b feature-name
+                    </code>
+                </pre>
+                <p>View all Branches</p>
+                <pre>
+                    <code>
+                        git branch
+                    </code>
+                </pre>
+            </section>
+            <section class="main-section" id="merging">
+                <header>Merging</header>
+                <p>Merging brings changes from one branch into another. After finishing work on a feature, you typically merge it into main or master.</p>
+                <p>First, switch to the target branch (e.g., main):</p>
+                <pre>
+                    <code>
+                        git checkout main
+                    </code>
+                </pre>
+                <p>Then merge the feature branch into it:</p>
+                <pre>
+                    <code>
+                        git merge feature-name
+                    </code>
+                </pre>
+                <p>If conflicts arise, Git will prompt you to resolve them manually before completing the merge.</p>
+            </section>
+            <section class="main-section" id="cloning-pulling">
+                <header>Cloning & Pulling</header>
+                <p>Cloning makes a local copy of a remote repository, while pulling keeps your local repo updated with changes from the remote.</p>
+                <p>Clone a repository:</p>
+                <pre>
+                    <code>
+                        git clone https://github.com/username/repo.git
+                    </code>
+                </pre>
+                <p>Pull the latest changes from the remote:</p>
+                <pre>
+                    <code>
+                        git pull origin main
+                    </code>
+                </pre>
+                <p>This is essential when working on multiple machines or in a collaborative project.</p>
+            </section>
+            <section class="main-section" id="push-pull-workflow">
+                <header>Push & Pull Workflow</header>
+                <p>The push and pull workflow keeps your local work in sync with the remote repository. Always pull before pushing to avoid conflicts.</p>
+                <p>Add files:</p>
+                <pre>
+                    <code>
+                        git add .
+                    </code>
+                </pre>
+                <p>
+                    Commit changes:
+                </p>
+                <pre>
+                    <code>
+                        git commit "your-message"
+                    </code>
+                </pre>
+                <p>Push to remote:</p>
+                <pre>
+                    <code>
+                        git push origin main
+                    </code>
+                </pre>
+                <p>Pull updates from remote:</p>
+                <pre>
+                    <code>
+                        git pull origin main
+                    </code>
+                </pre>
+                <p>This cycle helps maintain a clean, updated codebase across collaborators.</p>
+            </section>
+            <section class="main-section" id="github-basics">
+                <header>Github Basics</header>
+                <p>GitHub is a hosting service for Git repositories. It provides features like pull requests, issues, wikis, and collaboration tools.
+                    Basic GitHub tasks:</p>
+                <p>Create a new repository via the GitHub interface.</p>
+                <p>Link your local repo to GitHub:</p>
+                <pre>
+                    <code>
+                        git remote add origin https://github.com/username/repo.git
+                    </code>
+                </pre>
+                <p>Push your code:</p>
+                <pre>
+                    <code>
+                        git push -u origin main
+                    </code>
+                </pre>
+                <p>Fork a repo to make your own copy and suggest changes via pull requests.</p>
+                <p>Github enhances version control with project management tools.</p>
+            </section>
+            <section class="main-section" id="troubleshooting-tips">
+                <header>Troubleshooting Tips</header>
+                <p>Common Git problems can be resolved with simple commands:</p>
+                <p>See what's going on:</p>
+                <pre>
+                    <code>
+                        git status
+                    </code>
+                </pre>
+                <p>Undo the last commit (but keep changes staged):</p>
+                <pre>
+                    <code>
+                        git reset --soft HEAD~1
+                    </code>
+                </pre>
+                <p>Abort a merge conflict:</p>
+                <pre>
+                    <code>
+                        git merge --abort
+                    </code>
+                </pre>
+                <p>
+                    Recover lost work
+                </p>
+                <pre>
+                    <code>
+                        git reflog
+                    </code>
+                </pre>
+                <p>Fix line ending issues on Windows/Linux:</p>
+                <pre>
+                    <code>
+                        git config --global core.autocrlf true
+                    </code>
+                </pre>
+                <p>
+                    When in doubt, use <code>git status</code>, <code>git log</code>, and documentation or tools like GitHub Desktop to visualize history.
+                </p>
+            </section>
+            <section class="main-section" id="reference">
+                <header>Reference</header>
+                <p>Most knowledge contributed to this documentation was acquired from these resources:</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control">MDN</a></li>
+                    <li><a href="https://freecodecamp.org">Freecodecamp</a></li>
+                </ul>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
