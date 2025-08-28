@@ -1,1 +1,1 @@
-(VIEW LIVE PAGE AT)[https://git-documentation.netlify.app]
+[VIEW LIVE PAGE](https://git-documentation.netlify.app)
