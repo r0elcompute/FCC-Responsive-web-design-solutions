@@ -4,30 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/696fe727ac.js" crossorigin="anonymous"></script>
         <title>Git Documentation</title>
     </head>
     <body>
         <!--On smaller screens, navbar should be to the left and visible to user-->
-        <nav id="navbar">
-            <header>Git Documentation</header>
-            <a href="#introduction" class="nav-link">Introduction</a>
-            <a href="#installing-git" class="nav-link">Installing Git</a>
-            <a href="#configuring-git" class="nav-link">Configuring Git</a>
-            <a href="#git-basics" class="nav-link">Git Basics: init, add, commit</a>
-            <a href="#git-status" class="nav-link">Git status and Log</a>
-            <a href="#branching" class="nav-link">Branching</a>
-            <a href="#merging" class="nav-link">Merging</a>
-            <a href="#cloning-pulling" class="nav-link">Cloning & Pulling</a>
-            <a href="#push-pull-workflow" class="nav-link">Push & Pull Workflow</a>
-            <a href="#github-basics" class="nav-link">Github basics</a>
-            <a href="#troubleshooting-tips" class="nav-link">Troubleshooting Tips</a>
-            <a href="#reference" class="nav-link">Reference</a>
+        <!--TODO: Add a hamburger menu-->
+        <nav id="nav-bar">
+            <header id="left">Git Documentation</header>
+            <div id="right">
+                <button id="button"><i class="fa-solid fa-bars"></i></button>
+                <div id="menu" style="display: none">
+                    <header>Git Documentation</header>
+                    <a href="#introduction">Introduction</a>
+                    <a href="#installing-git">Installing Git</a>
+                    <a href="#configuring-git" class="nav-link">Configuring Git</a>
+                    <a href="#git-basics" class="nav-link">Git Basics: init, add, commit</a>
+                    <a href="#git-status" class="nav-link">Git status and Log</a>
+                    <a href="#branching" class="nav-link">Branching</a>
+                    <a href="#merging" class="nav-link">Merging</a>
+                    <a href="#cloning-pulling" class="nav-link">Cloning & Pulling</a>
+                    <a href="#push-pull-workflow" class="nav-link">Push & Pull Workflow</a>
+                    <a href="#github-basics" class="nav-link">Github basics</a>
+                    <a href="#troubleshooting-tips" class="nav-link">Troubleshooting Tips</a>
+                    <a href="#reference" class="nav-link">Reference</a>
+                </div>
+            </div>
         </nav>
         <main id="main-doc">
             <section class="main-section" id="introduction">
-            <div id="dark-light">
-                <button>change dark/light mode</button>
-            </div>
                 <header>Introduction</header>
                 <p>
                     Git is a popular version control system which was invented by Linus Torvalds in the year 2005.
